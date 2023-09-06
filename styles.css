@@ -34,7 +34,7 @@ body {
     display: flex;
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 25px;
+    padding: 0 40px;
     justify-content: space-between;
     align-items:center;
   }
@@ -49,7 +49,7 @@ body {
   .content {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 25px;
+    padding: 0 40px;
     text-align: left;
     line-height: 1.8;
     font-size: 15px;

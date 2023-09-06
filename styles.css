@@ -55,6 +55,10 @@ body {
     font-size: 15px;
   }
 
+  .buttons {
+    display: flex
+  }
+
   img {
     max-width: 550px;
     background-color: transparent;

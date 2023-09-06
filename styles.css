@@ -59,14 +59,14 @@ body {
         background: linear-gradient(to bottom,  #ff6719, #fa905c);
         border: none;
         border-radius: 20px;
-        color: #000000;
+        color: #fffcfc;
         padding: 10px 20px;
-        font-size: 16px;
+        font-size: 24px;
         cursor: pointer;
       }
       
       .gradient-button-substack:hover {
-        background: linear-gradient(to bottom, #ff6719, #fa905c);
+        background: linear-gradient(to bottom, #fa8246, #f3996c);
       }
 
       .gradient-button-medium {
@@ -75,7 +75,7 @@ body {
         border-radius: 20px;
         color: #fff;
         padding: 10px 20px;
-        font-size: 16px;
+        font-size: 24px;
         cursor: pointer;
       }
       

@@ -55,9 +55,33 @@ body {
     font-size: 15px;
   }
 
-  .buttons {
-    display: flex
-  }
+  .gradient-button-substack {
+        background: linear-gradient(to bottom,  #ff6719, #fa905c);
+        border: none;
+        border-radius: 20px;
+        color: #000000;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      .gradient-button-substack:hover {
+        background: linear-gradient(to bottom, #ff6719, #fa905c);
+      }
+
+      .gradient-button-medium {
+        background: linear-gradient(to bottom, #000, #333);
+        border: none;
+        border-radius: 20px;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      .gradient-button-medium:hover {
+        background: linear-gradient(to bottom, #333, #666);
+      }
 
   img {
     max-width: 550px;

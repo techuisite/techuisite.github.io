@@ -55,6 +55,11 @@ body {
     font-size: 15px;
   }
 
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .gradient-button-substack {
         background: linear-gradient(to bottom,  #ff6719, #fa905c);
         border: none;

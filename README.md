@@ -1,2 +1,2 @@
-title: Paul Alvarez
-subtitle: Pauls Place For Stuff
+# Paul Alvarez
+## My web place for stuff.

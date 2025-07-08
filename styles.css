@@ -227,11 +227,11 @@ body.light-mode .project-link:hover {
 }
 .book-rating {
     font-size: 1.2em;
-    color: #e9db8b; /* gold */
+    color: #e9db8b; /* lighter gold */
     margin-bottom: 4px;
     letter-spacing: 2px;
     user-select: none;
 }
 body.light-mode .book-rating {
-    color: #e9db8b;
+    color: #e6b800; /* gold*/
 }

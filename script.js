@@ -46,12 +46,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isLight) {
             document.body.classList.add('light-mode');
             if (themeIcon) themeIcon.src = 'images/planet.png';
-            if (themeLabel) themeLabel.textContent = 'Dark Mode';
+            if (themeLabel) themeLabel.textContent = '';
             localStorage.setItem('theme', 'light');
         } else {
             document.body.classList.remove('light-mode');
             if (themeIcon) themeIcon.src = 'images/sun.png';
-            if (themeLabel) themeLabel.textContent = 'Light Mode';
+            if (themeLabel) themeLabel.textContent = '';
             localStorage.setItem('theme', 'dark');
         }
     }

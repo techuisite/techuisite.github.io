@@ -26,15 +26,26 @@ h1 {
 }
 
 footer {
+    position: relative;
     background: #222;
     color: #ffffff;
     text-align: center;
     padding: 10px 0;
-    /* Remove these lines: */
-    /* position: fixed;
-    bottom: 0;
-    width: 100%; */
 }
+
+.theme-toggle {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
 body {
     background: #222;
     color: #eee;

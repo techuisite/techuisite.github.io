@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Paul Alvarez</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .projects-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            padding: 0 16px;
+        }
+        .project-tile {
+            background: #181818;
+            color: #eee;
+            border-radius: 8px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+            padding: 24px 20px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .project-tile:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+        }
+        .project-title {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: #00ff00;
+            margin-bottom: 8px;
+        }
+        .project-desc {
+            flex: 1;
+            color: #ccc;
+            margin-bottom: 16px;
+        }
+        .project-link {
+            color: #e8491d;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        .project-link:hover {
+            color: #00ff00;
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Projects</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
+            <a href="reading.html">Reading List</a>
+        </nav>
+    </header>
+    <main>
+        <div class="projects-container">
+            <div class="project-tile">
+                <div class="project-title">Techuisite</div>
+                <div class="project-desc">A technology and UI/UX blog featuring tutorials, reviews, and resources for developers and designers.</div>
+                <a class="project-link" href="https://www.techuisite.com" target="_blank" rel="noopener">Visit Techuisite</a>
+            </div>
+            <div class="project-tile">
+                <div class="project-title">Sample Project</div>
+                <div class="project-desc">A placeholder for your next awesome project. Add more details here!</div>
+                <a class="project-link" href="#" target="_blank" rel="noopener">View Project</a>
+            </div>
+            <!-- Add more project tiles below as needed -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Paul Alvarez</p>
+        <button id="theme-toggle" class="theme-toggle" title="Switch to dark mode">
+            <img id="theme-icon" src="images/sun.png" alt="Toggle theme" width="24" height="24">
+        </button>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

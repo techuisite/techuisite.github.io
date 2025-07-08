@@ -32,6 +32,14 @@ document.addEventListener('DOMContentLoaded', function() {
             case 'reading':
                 window.location.href = 'reading.html';
                 break;
+            case 'dark':
+                setTheme(false);
+                print('Nice! You found a secret command: stwitched to dark mode.');
+                break;
+            case 'light':
+                setTheme(true);
+                print('Nice! You found a secret command: switched to light mode.');
+                break;
             default:
                 print(`Command not found: <b>${cmd}</b>`);
         }

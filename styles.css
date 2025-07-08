@@ -111,14 +111,14 @@ body {
 }
 .terminal-input {
     width: 100%;
-    background: #181818;
-    color: #00ff00;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 8px;
     border: none;
-    border-top: 1px solid #333;
-    font-family: inherit;
-    font-size: 1em;
-    padding: 8px 12px;
     outline: none;
+    background: transparent;
+    color: inherit;
+    font-size: 1em;
 }
 nav {
     margin: 16px 0 0 0;

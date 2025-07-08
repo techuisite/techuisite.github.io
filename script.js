@@ -75,4 +75,10 @@ document.addEventListener('DOMContentLoaded', function() {
             setTheme(!document.body.classList.contains('light-mode'));
         });
     }
+
+    // Book rating display
+    document.querySelectorAll('.book-rating').forEach(function(el) {
+        const rating = parseInt(el.getAttribute('data-rating'), 10) || 0;
+        el.textContent = '★★★★★☆☆☆☆☆'.slice(5 - rating, 10 - rating);
+    });
 });

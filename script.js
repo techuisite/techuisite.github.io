@@ -46,12 +46,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isLight) {
             document.body.classList.add('light-mode');
             if (themeIcon) themeIcon.src = 'images/planet.png';
-            if (themeLabel) themeLabel.textContent = '';
+            if (themeToggle) themeToggle.title = 'Icon by https://www.freepik.com' + ' from www.flaticon.com';
             localStorage.setItem('theme', 'light');
         } else {
             document.body.classList.remove('light-mode');
             if (themeIcon) themeIcon.src = 'images/sun.png';
-            if (themeLabel) themeLabel.textContent = '';
+            if (themeToggle) themeToggle.title = 'Icon by https://www.flaticon.com/authors/smalllikeart' + ' from www.flaticon.com';
             localStorage.setItem('theme', 'dark');
         }
     }

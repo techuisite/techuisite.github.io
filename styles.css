@@ -30,10 +30,12 @@ footer {
     color: #ffffff;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
+    /* Remove these lines: */
+    /* position: fixed;
     bottom: 0;
-    width: 100%;
-}body {
+    width: 100%; */
+}
+body {
     background: #222;
     color: #eee;
     font-family: 'Fira Mono', 'Consolas', monospace;
@@ -100,11 +102,12 @@ footer {
 nav {
     margin: 16px 0 0 0;
     text-align: center;
+    background: transparent; /* Make nav background transparent */
 }
 
 nav a {
     color: #ffffff;
-    background: #35424a;
+    background: transparent; /* Remove button background */
     text-decoration: none;
     padding: 8px 18px;
     margin: 0 4px;

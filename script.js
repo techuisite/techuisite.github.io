@@ -21,14 +21,17 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleCommand(cmd) {
         switch(cmd.toLowerCase()) {
             case 'help':
-                print('Available commands: <b>help</b>, <b>about</b>, <b>clear</b>');
+                print('Available commands: <b>help</b>, <b>about</b>, <b>clear</b>','<b>reading</b>');
                 break;
             case 'about':
             window.location.href = 'about.html';
                 break;
             case 'clear':
                 body.innerHTML = '';
-                print('Available commands: <b>help</b>, <b>about</b>, <b>clear</b>');
+                print('Available commands: <b>help</b>, <b>about</b>, <b>clear</b>','<b>reading</b>');
+                break;
+            case 'reading':
+                window.location.href = 'reading.html';
                 break;
             default:
                 print(`Command not found: <b>${cmd}</b>`);

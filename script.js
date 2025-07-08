@@ -27,9 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
             window.location.href = 'about.html';
                 break;
             case 'clear':
-                body.innerHTML = '';
-                body.innerHTML = `<br>${text}`;
-                body.scrollTop = body.scrollHeight;
+                window.location.href = 'index.html';
                 break;
             case 'reading':
                 window.location.href = 'reading.html';

@@ -39,25 +39,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Theme persistence
     const themeToggle = document.getElementById('theme-toggle');
-    // On load, set theme from localStorage
-    if (localStorage.getItem('theme') === 'light') {
-        document.body.classList.add('light-mode');
-        if (themeToggle) themeToggle.textContent = '🌙 Dark Mode';
-    } else {
-        document.body.classList.remove('light-mode');
-        if (themeToggle) themeToggle.textContent = '🌞 Light Mode';
+    const themeIcon = document.getElementById('theme-icon');
+    const themeLabel = document.getElementById('theme-label');
+
+    function setTheme(isLight) {
+        if (isLight) {
+            document.body.classList.add('light-mode');
+            if (themeIcon) themeIcon.src = 'images/dark.png';
+            if (themeLabel) themeLabel.textContent = 'Dark Mode';
+            localStorage.setItem('theme', 'light');
+        } else {
+            document.body.classList.remove('light-mode');
+            if (themeIcon) themeIcon.src = 'images/light.png';
+            if (themeLabel) themeLabel.textContent = 'Light Mode';
+            localStorage.setItem('theme', 'dark');
+        }
     }
+
+    // On load, set theme from localStorage
+    setTheme(localStorage.getItem('theme') === 'light');
 
     if (themeToggle) {
         themeToggle.addEventListener('click', function() {
-            document.body.classList.toggle('light-mode');
-            if(document.body.classList.contains('light-mode')) {
-                themeToggle.textContent = '🌙 Dark Mode';
-                localStorage.setItem('theme', 'light');
-            } else {
-                themeToggle.textContent = '🌞 Light Mode';
-                localStorage.setItem('theme', 'dark');
-            }
+            setTheme(!document.body.classList.contains('light-mode'));
         });
     }
 });

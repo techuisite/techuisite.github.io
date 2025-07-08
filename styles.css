@@ -46,6 +46,18 @@ footer {
     gap: 6px;
 }
 
+.theme-toggle img {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+    border-radius: 50%;
+    background: transparent;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.theme-toggle img:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+    transform: scale(1.08);
+}
+
 body {
     background: #222;
     color: #eee;

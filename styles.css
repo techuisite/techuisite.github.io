@@ -37,12 +37,12 @@ nav a:hover {
 }
 
 footer {
-    background: #35424a;
+    background: #222;
     color: #ffffff;
     text-align: center;
     padding: 10px 0;
     position: bottom;
-    bottom: 0;
+    bottom: 100%;
     width: 100%;
 }body {
     background: #222;

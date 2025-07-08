@@ -200,6 +200,23 @@ body.light-mode .book-author {
 body.light-mode .book-review {
     color: #222;
 }
+body.light-mode .project-tile {
+    background: #fff;
+    color: #222;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+body.light-mode .project-title {
+    color: #008000;
+}
+body.light-mode .project-desc {
+    color: #444;
+}
+body.light-mode .project-link {
+    color: #e8491d;
+}
+body.light-mode .project-link:hover {
+    color: #008000;
+}
 .project-thumb {
     width: 100%;
     max-height: 180px;

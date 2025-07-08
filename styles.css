@@ -108,3 +108,25 @@ footer {
     padding: 8px 12px;
     outline: none;
 }
+nav {
+    margin: 16px 0 0 0;
+    text-align: center;
+}
+
+nav a {
+    color: #00ff00;
+    background: #222;
+    text-decoration: none;
+    padding: 8px 18px;
+    margin: 0 4px;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1em;
+    transition: background 0.2s, color 0.2s;
+    display: inline-block;
+}
+
+nav a:hover {
+    background: #00ff00;
+    color: #222;
+}

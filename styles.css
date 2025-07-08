@@ -97,3 +97,14 @@ footer {
     color: #00ff00;
     margin-right: 6px;
 }
+.terminal-input {
+    width: 100%;
+    background: #181818;
+    color: #00ff00;
+    border: none;
+    border-top: 1px solid #333;
+    font-family: inherit;
+    font-size: 1em;
+    padding: 8px 12px;
+    outline: none;
+}

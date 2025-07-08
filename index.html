@@ -11,26 +11,6 @@
         <h1>Welcome to My Website</h1>
     </header>
     <main>
-        <p>This is a simple website project to demonstrate basic HTML structure.</p>
-    </main>
-    <footer>
-        <p>&copy; 2023 My Website</p>
-    </footer>
-    <script src="js/script.js"></script>
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <header>
-        <h1>Welcome to My Website</h1>
-    </header>
-    <main>
         <div class="terminal">
             <div class="terminal-header">
                 <span class="dot red"></span>
@@ -38,11 +18,13 @@
                 <span class="dot green"></span>
                 <span class="terminal-title">Terminal</span>
             </div>
-            <div class="terminal-body">
-                <span class="prompt">$</span> Hello, welcome to my terminal website!<br>
-                <span class="prompt">$</span> Type <b>help</b> to get started.<br>
+           <div class="terminal-body" id="terminal-body">
+            <span class="prompt">$</span> Hello, welcome to my terminal website!<br>
+             <span class="prompt">$</span> Type <b>help</b> to get started.<br>
             </div>
-        </div>
+                <input type="text" id="terminal-input" class="terminal-input" autofocus autocomplete="off" placeholder="Type a command...">
+
+            </div>
     </main>
     <footer>
         <p>&copy; 2023 My Website</p>

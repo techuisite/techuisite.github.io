@@ -225,3 +225,13 @@ body.light-mode .project-link:hover {
     margin-bottom: 14px;
     background: #111;
 }
+.book-rating {
+    font-size: 1.2em;
+    color: #ffd700; /* gold */
+    margin-bottom: 4px;
+    letter-spacing: 2px;
+    user-select: none;
+}
+body.light-mode .book-rating {
+    color: #e6b800;
+}

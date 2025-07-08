@@ -19,20 +19,6 @@ h1 {
     margin: 0;
 }
 
-nav {
-    margin: 20px 0;
-}
-
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    padding: 10px 15px;
-}
-
-nav a:hover {
-    background: #e8491d;
-}
-
 .container {
     width: 80%;
     margin: auto;
@@ -117,7 +103,7 @@ nav {
 }
 
 nav a {
-    color: #00ff00;
+    color: #ffffff;
     background: #35424a;
     text-decoration: none;
     padding: 8px 18px;
@@ -130,8 +116,8 @@ nav a {
 }
 
 nav a:hover {
-    background: #00ff00;
-    color: #35424a;
+    background: #e8491d;
+    color: #fff;
 }
 main {
     flex: 1;

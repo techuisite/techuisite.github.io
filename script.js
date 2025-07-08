@@ -24,10 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 print('Available commands: <b>help</b>, <b>about</b>, <b>clear</b>');
                 break;
             case 'about':
-                print('This is a sample terminal website created by [Your Name].');
+            window.location.href = 'about.html';
                 break;
             case 'clear':
                 body.innerHTML = '';
+                print('Available commands: <b>help</b>, <b>about</b>, <b>clear</b>');
                 break;
             default:
                 print(`Command not found: <b>${cmd}</b>`);

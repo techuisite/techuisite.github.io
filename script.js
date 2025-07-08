@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleCommand(cmd) {
         switch(cmd.toLowerCase()) {
             case 'help':
-                print('Available commands: <b>help</b>, <b>about</b>, <b>clear</b>, <b>reading</b>');
+                print('Available commands: <b>help</b>, <b>about</b>, <b>clear</b>, <b>projects</b>, <b>reading</b>');
                 break;
             case 'about':
                 window.location.href = 'about.html';
@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
             case 'reading':
                 window.location.href = 'reading.html';
+                break;
+            case 'projects':
+                window.location.href = 'projects.html';
                 break;
             case 'dark':
                 setTheme(false);

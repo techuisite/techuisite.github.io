@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .projects-container {
-            max-width: 1100px;
+            max-width: 700px;
             margin: 40px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 32px;
             padding: 0 16px;
         }
@@ -70,16 +70,17 @@
     <main>
         <div class="projects-container">
             <div class="project-tile">
+                <img class="project-thumb" src="images/techuisite.png" alt="Techuisite thumbnail">
                 <div class="project-title">Techuisite</div>
-                <div class="project-desc">A technology and UI/UX blog featuring tutorials, reviews, and resources for developers and designers.</div>
+                <div class="project-desc">My personal technology blog full of gadget reviews and technology opinions.</div>
                 <a class="project-link" href="https://www.techuisite.com" target="_blank" rel="noopener">Visit Techuisite</a>
             </div>
-            <div class="project-tile">
+           <!--  <div class="project-tile">
                 <div class="project-title">Sample Project</div>
                 <div class="project-desc">A placeholder for your next awesome project. Add more details here!</div>
                 <a class="project-link" href="#" target="_blank" rel="noopener">View Project</a>
             </div>
-            <!-- Add more project tiles below as needed -->
+            Add more project tiles below as needed -->
         </div>
     </main>
     <footer>

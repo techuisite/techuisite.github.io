@@ -52,6 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
             case 'lenny':
                 showDancingRobot();
                 break;
+            case 'sully':
+                showHoppingBunny();
+                break;
             default:
                 print(`Command not found: <b>${cmd}</b>`);
         }
@@ -111,6 +114,30 @@ document.addEventListener('DOMContentLoaded', function() {
             if (count >= repeats * frames.length) {
                 clearInterval(interval);
                 print('Robot dance complete!');
+            }
+        }, 200);
+    }
+
+    // Add this function after showDancingRobot()
+    function showHoppingBunny() {
+        const frames = [
+            `(\u25E3\u2022\u0300\u1D25\u2022\u0301)\u25E3<br>/)  )<br>(")(")`,
+            `(\u25E3\u2022\u0300\u1D25\u2022\u0301)\u25E3<br>  /)<br>(")(")`,
+            `(\u25E3\u2022\u0300\u1D25\u2022\u0301)\u25E3<br>   /)<br>(")(")`,
+            `(\u25E3\u2022\u0300\u1D25\u2022\u0301)\u25E3<br>  /)<br>(")(")`
+        ];
+        let frame = 0;
+        let count = 0;
+        const repeats = 8;
+        print('Hopping bunny activated!<br>');
+        print('&nbsp;'); // Print a blank line for the bunny frame
+        const interval = setInterval(() => {
+            print(frames[frame], true); // Replace the last line (bunny frame)
+            frame = (frame + 1) % frames.length;
+            count++;
+            if (count >= repeats * frames.length) {
+                clearInterval(interval);
+                print('Bunny hop complete!');
             }
         }, 200);
     }

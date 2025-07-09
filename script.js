@@ -123,22 +123,32 @@ document.addEventListener('DOMContentLoaded', function() {
         const frames = [
             // Bunny on the ground
             `
-&nbsp;<br>
 (\\__/)<br>
 (='.'=)<br>
 (")_(")
             `,
-            // Bunny in the air (hopped up)
-            `
-&nbsp;<br>
-&nbsp;&nbsp;&nbsp;(\\__/)<br>
-&nbsp;&nbsp;&nbsp;(='.'=)<br>
-&nbsp;&nbsp;&nbsp;(")_(")
+            // Bunny mid-air (hopped up)
+            `<br>
+(\\__/)<br>
+(='.'=)<br>
+(")_(")
+            `,
+            // Bunny higher in the air
+            `<br><br>
+(\\__/)<br>
+(='.'=)<br>
+(")_(")
+            `,
+            // Bunny coming down
+            `<br>
+(\\__/)<br>
+(='.'=)<br>
+(")_(")
             `
         ];
         let frame = 0;
         let count = 0;
-        const repeats = 8;
+        const repeats = 6;
         print('Hopping bunny activated!<br>');
         print('&nbsp;'); // Print a blank line for the bunny frame
         const interval = setInterval(() => {
@@ -149,6 +159,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 clearInterval(interval);
                 print('Bunny hop complete!');
             }
-        }, 220);
+        }, 180);
     }
 });

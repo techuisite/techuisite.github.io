@@ -3,10 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const body = document.getElementById('terminal-body');
 
     function print(text, replaceLast = false) {
-        if (replaceLast && body.lastChild) {
-            body.lastChild.innerHTML = text;
+        if (replaceLast && body.lastElementChild) {
+            body.lastElementChild.innerHTML = text;
         } else {
-            body.innerHTML += `<br>${text}`;
+            const line = document.createElement('div');
+            line.innerHTML = text;
+            body.appendChild(line);
         }
         body.scrollTop = body.scrollHeight;
     }

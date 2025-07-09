@@ -103,6 +103,8 @@ body {
     padding: 18px 16px;
     font-size: 1.1em;
     min-height: 120px;
+    height: 220px;
+    overflow-y: auto;
 }
 
 .prompt {

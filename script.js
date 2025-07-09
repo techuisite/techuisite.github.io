@@ -101,9 +101,9 @@ document.addEventListener('DOMContentLoaded', function() {
         let count = 0;
         const repeats = 8;
         print('Dancing robot activated!<br>');
-        print(frames[0]); // Print the first frame
+        print('&nbsp;'); // Print a blank line for the robot frame
         const interval = setInterval(() => {
-            print(frames[frame], true); // Replace the last frame
+            print(frames[frame], true); // Replace the last line (robot frame)
             frame = (frame + 1) % frames.length;
             count++;
             if (count >= repeats * frames.length) {

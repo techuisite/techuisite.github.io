@@ -121,10 +121,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add this function after showDancingRobot()
     function showHoppingBunny() {
         const frames = [
-            `(\u25E3\u2022\u0300\u1D25\u2022\u0301)\u25E3<br>/)  )<br>(")(")`,
-            `(\u25E3\u2022\u0300\u1D25\u2022\u0301)\u25E3<br>  /)<br>(")(")`,
-            `(\u25E3\u2022\u0300\u1D25\u2022\u0301)\u25E3<br>   /)<br>(")(")`,
-            `(\u25E3\u2022\u0300\u1D25\u2022\u0301)\u25E3<br>  /)<br>(")(")`
+            // Bunny on the ground
+            `
+&nbsp;<br>
+(\\__/)<br>
+(='.'=)<br>
+(")_(")
+            `,
+            // Bunny in the air (hopped up)
+            `
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;(\\__/)<br>
+&nbsp;&nbsp;&nbsp;(='.'=)<br>
+&nbsp;&nbsp;&nbsp;(")_(")
+            `
         ];
         let frame = 0;
         let count = 0;
@@ -139,6 +149,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 clearInterval(interval);
                 print('Bunny hop complete!');
             }
-        }, 200);
+        }, 220);
     }
 });

@@ -2,8 +2,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const input = document.getElementById('terminal-input');
     const body = document.getElementById('terminal-body');
 
-    function print(text) {
-        body.innerHTML += `<br>${text}`;
+    function print(text, replaceLast = false) {
+        if (replaceLast && body.lastChild) {
+            body.lastChild.innerHTML = text;
+        } else {
+            body.innerHTML += `<br>${text}`;
+        }
         body.scrollTop = body.scrollHeight;
     }
 
@@ -97,9 +101,9 @@ document.addEventListener('DOMContentLoaded', function() {
         let count = 0;
         const repeats = 8;
         print('Dancing robot activated!<br>');
+        print(frames[0]); // Print the first frame
         const interval = setInterval(() => {
-            // Clear previous robot (optional: you can clear the terminal or just append)
-            print(frames[frame], true); // true = replace last line (if your print supports it)
+            print(frames[frame], true); // Replace the last frame
             frame = (frame + 1) % frames.length;
             count++;
             if (count >= repeats * frames.length) {

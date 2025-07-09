@@ -43,6 +43,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTheme(true);
                 print('Nice! You found a secret command: switched to light mode.');
                 break;
+            case 'lenny':
+                showDancingRobot();
+                break;
             default:
                 print(`Command not found: <b>${cmd}</b>`);
         }
@@ -81,4 +84,28 @@ document.addEventListener('DOMContentLoaded', function() {
         const rating = parseInt(el.getAttribute('data-rating'), 10) || 0;
         el.textContent = '★★★★★☆☆☆☆☆'.slice(5 - rating, 10 - rating);
     });
+
+    // Add this function to animate the robot in your web terminal
+    function showDancingRobot() {
+        const frames = [
+            `[o_o]<br> /|\\<br> / \\`,
+            `[o_o]<br>\\|/<br> / \\`,
+            `[o_o]<br> /|\\<br>_/ \\`,
+            `[o_o]<br>\\|/<br>_/ \\`
+        ];
+        let frame = 0;
+        let count = 0;
+        const repeats = 8;
+        print('Dancing robot activated!<br>');
+        const interval = setInterval(() => {
+            // Clear previous robot (optional: you can clear the terminal or just append)
+            print(frames[frame], true); // true = replace last line (if your print supports it)
+            frame = (frame + 1) % frames.length;
+            count++;
+            if (count >= repeats * frames.length) {
+                clearInterval(interval);
+                print('Robot dance complete!');
+            }
+        }, 200);
+    }
 });

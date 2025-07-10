@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background: #35424a;
+    background: #466b8b;
     color: #ffffff;
     padding: 10px 0;
     text-align: center;
@@ -140,7 +140,7 @@ nav a {
 }
 
 nav a:hover {
-    background: #e8491d;
+    background: #3c84a4;
     color: #fff;
 }
 main {
@@ -184,7 +184,7 @@ body.light-mode nav a {
     background: #e0e0e0;
 }
 body.light-mode nav a:hover {
-    background: #e8491d;
+    background: #0b0f33;
     color: #fff;
 }
 body.light-mode footer {

@@ -1,0 +1,103 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container-wide footer-inner">
+    <div class="footer-left">
+      <p class="footer-title">Alvalog</p>
+      <p class="footer-desc">A personal journal exploring technology, writing tools, and modern craft. Written by Paul Alvarez.</p>
+    </div>
+
+    <div class="footer-right">
+      <ul class="footer-links">
+        <li><a href="https://mastodon.social/@PaulAlvarez" target="_blank" rel="me noopener">Mastodon</a></li>
+        <li><a href="https://www.threads.net/@techuisite" target="_blank" rel="noopener">Threads</a></li>
+        <li><a href="https://github.com/techuisite" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="/rss.xml">RSS Feed</a></li>
+      </ul>
+      <p class="footer-copy">&copy; {currentYear} Paul Alvarez. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border-color);
+    margin-top: 4rem;
+    padding: 3rem 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    background-color: var(--bg-primary);
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .footer-left {
+    max-width: 380px;
+  }
+
+  .footer-title {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+  }
+
+  .footer-desc {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.15s ease;
+  }
+
+  .footer-links a:hover {
+    color: var(--accent);
+  }
+
+  .footer-copy {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 600px) {
+    .footer-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-right {
+      align-items: flex-start;
+    }
+  }
+</style>

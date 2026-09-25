@@ -1,0 +1,312 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const sorted = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+  return sorted.map((post, index) => {
+    const prevPost = index < sorted.length - 1 ? sorted[index + 1] : null;
+    const nextPost = index > 0 ? sorted[index - 1] : null;
+
+    return {
+      params: { slug: post.id },
+      props: { post, prevPost, nextPost },
+    };
+  });
+}
+
+const { post, prevPost, nextPost } = Astro.props;
+const { Content } = await render(post);
+
+function estimateReadingTime(body = '') {
+  const words = body.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
+  const minutes = Math.max(1, Math.round(words / 200));
+  return `${minutes} min read`;
+}
+
+const formattedDate = new Intl.DateTimeFormat('en-US', {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}).format(post.data.pubDate);
+
+const readingTime = estimateReadingTime(post.body);
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.heroImage}
+  article={true}
+>
+  <article class="article-container">
+    <header class="article-header">
+      <div class="article-meta">
+        <time datetime={post.data.pubDate.toISOString()}>{formattedDate}</time>
+        <span class="meta-dot">&bull;</span>
+        <span>{readingTime}</span>
+        <span class="meta-dot">&bull;</span>
+        <span>By Paul Alvarez</span>
+      </div>
+
+      <h1 class="article-title">{post.data.title}</h1>
+
+      {post.data.tags && post.data.tags.length > 0 && (
+        <div class="article-tags">
+          {post.data.tags.map((tag: string) => (
+            <span class="tag-badge">{tag}</span>
+          ))}
+        </div>
+      )}
+    </header>
+
+    {post.data.heroImage && (
+      <div class="article-hero-wrap">
+        <img
+          src={post.data.heroImage}
+          alt={post.data.title}
+          class="article-hero-image"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </div>
+    )}
+
+    <div class="article-content">
+      <Content />
+    </div>
+
+    <footer class="article-footer">
+      <div class="author-box">
+        <div class="author-avatar">✒️</div>
+        <div class="author-info">
+          <p class="author-name">Paul Alvarez</p>
+          <p class="author-bio">Writer and creator of Alvalog. Exploring the tools, technologies, and tactile gear that shape how we think and work.</p>
+        </div>
+      </div>
+
+      <nav class="post-navigation" aria-label="Adjacent Articles">
+        {prevPost ? (
+          <a href={`/posts/${prevPost.id}`} class="nav-prev">
+            <span class="nav-direction">&larr; Older</span>
+            <span class="nav-title">{prevPost.data.title}</span>
+          </a>
+        ) : <div />}
+
+        {nextPost ? (
+          <a href={`/posts/${nextPost.id}`} class="nav-next">
+            <span class="nav-direction">Newer &rarr;</span>
+            <span class="nav-title">{nextPost.data.title}</span>
+          </a>
+        ) : <div />}
+      </nav>
+
+      <div class="back-home-wrap">
+        <a href="/" class="back-home-link">&larr; Back to all articles</a>
+      </div>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .article-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .article-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-family: var(--font-sans);
+  }
+
+  .meta-dot {
+    color: var(--border-color);
+  }
+
+  .article-title {
+    font-size: 2.75rem;
+    line-height: 1.18;
+    margin: 0 0 1.25rem 0;
+    letter-spacing: -0.02em;
+  }
+
+  .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .article-hero-wrap {
+    margin: 2rem 0 3rem;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--bg-muted);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  }
+
+  .article-hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 540px;
+    object-fit: cover;
+  }
+
+  .article-content {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+  }
+
+  .article-content :global(p) {
+    margin-bottom: 1.75rem;
+  }
+
+  .article-content :global(h2) {
+    font-size: 1.85rem;
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .article-content :global(h3) {
+    font-size: 1.4rem;
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .article-content :global(img) {
+    margin: 2.5rem auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .article-footer {
+    margin-top: 4.5rem;
+    padding-top: 3rem;
+    border-top: 2px solid var(--border-color);
+  }
+
+  .author-box {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+  }
+
+  .author-avatar {
+    font-size: 2.25rem;
+    line-height: 1;
+    background-color: var(--bg-muted);
+    padding: 0.75rem;
+    border-radius: 50%;
+  }
+
+  .author-name {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .author-bio {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  .post-navigation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .nav-prev, .nav-next {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .nav-next {
+    text-align: right;
+  }
+
+  .nav-prev:hover, .nav-next:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .nav-direction {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.35rem;
+  }
+
+  .nav-title {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.35;
+  }
+
+  .back-home-wrap {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .back-home-link {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    transition: color 0.15s ease;
+  }
+
+  .back-home-link:hover {
+    color: var(--accent);
+  }
+
+  @media (max-width: 640px) {
+    .article-title {
+      font-size: 2.1rem;
+    }
+
+    .post-navigation {
+      grid-template-columns: 1fr;
+    }
+
+    .nav-next {
+      text-align: left;
+    }
+  }
+</style>

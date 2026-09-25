@@ -1,0 +1,375 @@
+:root {
+  /* Colors - Light Mode (Warm Paper & Terracotta) */
+  --bg-primary: #faf7f2;
+  --bg-surface: #ffffff;
+  --bg-muted: #f2eee6;
+  --text-primary: #1c1d1f;
+  --text-secondary: #5e6066;
+  --text-muted: #888b91;
+  --border-color: #e6e1d6;
+  --border-subtle: #efebe2;
+  
+  --accent: #c05638;
+  --accent-hover: #9e432a;
+  --accent-light: #f7ece7;
+  
+  --font-serif: "Newsreader", "Charter", "Bitstream Charter", "Iowan Old Style", "Source Serif 4", Georgia, serif;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  
+  --max-width: 72ch;
+  --max-width-wide: 920px;
+  
+  color-scheme: light dark;
+}
+
+/* System dark mode fallback */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #121517;
+    --bg-surface: #181c20;
+    --bg-muted: #20252a;
+    --text-primary: #e8e6e1;
+    --text-secondary: #a0a5ad;
+    --text-muted: #717780;
+    --border-color: #2a3138;
+    --border-subtle: #20262c;
+    
+    --accent: #e06d48;
+    --accent-hover: #f08968;
+    --accent-light: #2c1e19;
+  }
+}
+
+/* Explicit user theme override */
+html[data-theme="light"] {
+  --bg-primary: #faf7f2;
+  --bg-surface: #ffffff;
+  --bg-muted: #f2eee6;
+  --text-primary: #1c1d1f;
+  --text-secondary: #5e6066;
+  --text-muted: #888b91;
+  --border-color: #e6e1d6;
+  --border-subtle: #efebe2;
+  --accent: #c05638;
+  --accent-hover: #9e432a;
+  --accent-light: #f7ece7;
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  --bg-primary: #121517;
+  --bg-surface: #181c20;
+  --bg-muted: #20252a;
+  --text-primary: #e8e6e1;
+  --text-secondary: #a0a5ad;
+  --text-muted: #717780;
+  --border-color: #2a3138;
+  --border-subtle: #20262c;
+  --accent: #e06d48;
+  --accent-hover: #f08968;
+  --accent-light: #2c1e19;
+  color-scheme: dark;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  accent-color: var(--accent);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.container-wide {
+  width: 100%;
+  max-width: var(--max-width-wide);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+h1 { font-size: 2.25rem; margin-top: 2rem; margin-bottom: 1.25rem; }
+h2 { font-size: 1.75rem; margin-top: 2.5rem; margin-bottom: 1rem; }
+h3 { font-size: 1.375rem; margin-top: 2rem; margin-bottom: 0.75rem; }
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin: 2.5rem 0;
+}
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 0.5rem 0 0.5rem 1.25rem;
+  margin: 1.75rem 0;
+  color: var(--text-secondary);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.125rem;
+}
+
+ul, ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background-color: var(--bg-muted);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+pre {
+  background-color: #1a1e22 !important;
+  color: #f0f0f0 !important;
+  padding: 1.25rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.75rem 0;
+  color-scheme: dark;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Images & Media */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+figure {
+  margin: 2.5rem 0;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* Ghost Card Styles */
+.kg-card {
+  margin: 2.5rem 0;
+}
+
+.kg-image-card {
+  text-align: center;
+}
+
+.kg-image-card img {
+  margin: 0 auto;
+  display: block;
+}
+
+.kg-width-wide {
+  position: relative;
+  width: 100vw;
+  max-width: var(--max-width-wide);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.kg-callout-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: var(--bg-muted);
+  border-left: 4px solid var(--accent);
+  padding: 1.25rem;
+  border-radius: 6px;
+  margin: 2rem 0;
+}
+
+.kg-callout-emoji {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.kg-callout-text {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.kg-callout-text p:last-child {
+  margin-bottom: 0;
+}
+
+.kg-bookmark-card {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.kg-bookmark-container {
+  display: flex;
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-surface);
+  overflow: hidden;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.kg-bookmark-container:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.kg-bookmark-content {
+  flex: 1;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.kg-bookmark-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.kg-bookmark-description {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.kg-bookmark-metadata {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.kg-bookmark-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.kg-bookmark-thumbnail {
+  width: 200px;
+  min-width: 160px;
+  max-height: 160px;
+  position: relative;
+}
+
+.kg-bookmark-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+@media (max-width: 640px) {
+  .kg-bookmark-container {
+    flex-direction: column-reverse;
+  }
+  .kg-bookmark-thumbnail {
+    width: 100%;
+    height: 160px;
+  }
+}
+
+.kg-gallery-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.kg-gallery-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.kg-gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Badge / Tags */
+.tag-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  background-color: var(--accent-light);
+  color: var(--accent);
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.tag-badge:hover {
+  background-color: var(--accent);
+  color: #ffffff;
+}

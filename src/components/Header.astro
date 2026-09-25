@@ -1,0 +1,136 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '' } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="container-wide header-inner">
+    <div class="brand">
+      <a href="/" class="brand-title">Alvalog</a>
+      <span class="brand-byline">By Paul Alvarez</span>
+    </div>
+
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Articles</a></li>
+        <li><a href="/archive" class={currentPath === '/archive' ? 'active' : ''}>Archive</a></li>
+        <li><a href="/about" class={currentPath === '/about' ? 'active' : ''}>About</a></li>
+        <li><a href="/rss.xml" class="rss-link" title="RSS Feed">RSS</a></li>
+      </ul>
+      <div class="theme-wrapper">
+        <ThemeToggle />
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.75rem 0 1.25rem;
+    margin-bottom: 2.5rem;
+    background-color: var(--bg-primary);
+  }
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 0.85rem;
+  }
+
+  .brand-title {
+    font-family: var(--font-serif);
+    font-size: 1.85rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    text-decoration: none;
+    line-height: 1;
+    transition: color 0.15s ease;
+  }
+
+  .brand-title:hover {
+    color: var(--accent);
+  }
+
+  .brand-byline {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+    font-family: var(--font-serif);
+  }
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.15s ease;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--accent);
+  }
+
+  .theme-wrapper {
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    border-left: 1px solid var(--border-color);
+  }
+
+  @media (max-width: 600px) {
+    .site-header {
+      padding: 1.25rem 0 1rem;
+    }
+
+    .header-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .brand {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .site-nav {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .nav-links {
+      gap: 1.15rem;
+    }
+  }
+</style>

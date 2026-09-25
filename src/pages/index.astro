@@ -1,0 +1,268 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const leadPost = sortedPosts[0];
+const streamPosts = sortedPosts.slice(1, 15);
+
+function estimateReadingTime(body = '') {
+  const words = body.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
+  const minutes = Math.max(1, Math.round(words / 200));
+  return `${minutes} min read`;
+}
+
+const leadDate = leadPost ? new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}).format(leadPost.data.pubDate) : '';
+
+const leadReadingTime = leadPost ? estimateReadingTime(leadPost.body) : '';
+---
+
+<BaseLayout currentPath="/">
+  <div class="container-wide">
+    {leadPost && (
+      <section class="lead-story-section">
+        <article class="lead-story">
+          {leadPost.data.heroImage && (
+            <a href={`/posts/${leadPost.id}`} class="lead-image-link">
+              <img
+                src={leadPost.data.heroImage}
+                alt={leadPost.data.title}
+                class="lead-image"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </a>
+          )}
+          
+          <div class="lead-content">
+            <div class="lead-meta">
+              <span class="lead-badge">Latest Article</span>
+              <span class="meta-dot">&bull;</span>
+              <time datetime={leadPost.data.pubDate.toISOString()}>{leadDate}</time>
+              <span class="meta-dot">&bull;</span>
+              <span>{leadReadingTime}</span>
+              {leadPost.data.tags.length > 0 && (
+                <>
+                  <span class="meta-dot">&bull;</span>
+                  <span class="lead-tag">{leadPost.data.tags[0]}</span>
+                </>
+              )}
+            </div>
+
+            <h1 class="lead-title">
+              <a href={`/posts/${leadPost.id}`}>{leadPost.data.title}</a>
+            </h1>
+
+            {leadPost.data.description && (
+              <p class="lead-excerpt">{leadPost.data.description}</p>
+            )}
+
+            <div class="lead-action">
+              <a href={`/posts/${leadPost.id}`} class="read-more-btn">
+                Read Article <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
+    )}
+
+    <section class="stream-section">
+      <div class="stream-header">
+        <h2 class="stream-heading">Recent Writing</h2>
+        <a href="/archive" class="stream-archive-link">Browse all {allPosts.length} articles &rarr;</a>
+      </div>
+
+      <div class="stream-list">
+        {streamPosts.map((post) => (
+          <PostCard
+            title={post.data.title}
+            description={post.data.description}
+            pubDate={post.data.pubDate}
+            slug={post.id}
+            heroImage={post.data.heroImage}
+            tags={post.data.tags}
+            readingTime={estimateReadingTime(post.body)}
+          />
+        ))}
+      </div>
+
+      <div class="stream-footer">
+        <a href="/archive" class="view-archive-btn">View Complete Archive ({allPosts.length} articles) &rarr;</a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .lead-story-section {
+    margin-bottom: 4rem;
+    padding-bottom: 3.5rem;
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  .lead-story {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .lead-story:has(.lead-image-link) {
+      grid-template-columns: 1.15fr 1fr;
+      align-items: center;
+      gap: 3rem;
+    }
+  }
+
+  .lead-image-link {
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--bg-muted);
+    aspect-ratio: 16 / 10;
+  }
+
+  .lead-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .lead-story:hover .lead-image {
+    transform: scale(1.02);
+  }
+
+  .lead-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .lead-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .lead-badge {
+    background-color: var(--accent);
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+  }
+
+  .meta-dot {
+    color: var(--border-color);
+  }
+
+  .lead-tag {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .lead-title {
+    font-size: 2.25rem;
+    line-height: 1.2;
+    margin: 0 0 1rem 0;
+  }
+
+  .lead-title a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .lead-title a:hover {
+    color: var(--accent);
+  }
+
+  .lead-excerpt {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .read-more-btn:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+  }
+
+  .stream-section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .stream-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+  }
+
+  .stream-heading {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .stream-archive-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .stream-footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+  }
+
+  .view-archive-btn {
+    display: inline-block;
+    padding: 0.85rem 1.75rem;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+  }
+
+  .view-archive-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+</style>

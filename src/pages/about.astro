@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About — Alvalog" currentPath="/about">
+  <div class="container">
+    <header class="about-header">
+      <h1 class="about-title">About</h1>
+      <p class="about-lead">A journal on technology, tools, and the craft of modern work.</p>
+    </header>
+
+    <div class="about-content">
+      <h2>Hello, I'm Paul</h2>
+      <p>
+        I am Paul Alvarez — a father, a husband, and a lover of technology. Writing is a lifelong passion that I continue to explore, refine, and share through this website.
+      </p>
+
+      <h2>About Alvalog</h2>
+      <p>
+        <strong>Alvalog</strong> is my personal publication. It is a home for essays, in-depth hardware and software reviews, workflow breakdowns, and reflections on everyday tools.
+      </p>
+      <p>
+        Much of the technology writing here previously lived under the banner of <em>Techuisite</em> (a synthesis of <em>Technology</em> and <em>Requisite</em>). While technology remains central to my writing, Alvalog broadens the lens to include everything that inspires me — from analog notebooks and e-ink tablets (like the Supernote and reMarkable) to personal productivity, EDC gear, and life musings.
+      </p>
+
+      <h2>Colophon</h2>
+      <p>
+        This site is crafted with simplicity, longevity, and reader focus in mind:
+      </p>
+      <ul>
+        <li><strong>Static Engine:</strong> Built with <a href="https://astro.build" target="_blank" rel="noopener">Astro</a> for instant page loads and zero unnecessary JavaScript.</li>
+        <li><strong>Hosting:</strong> Deployed via GitHub Pages at <a href="https://www.paulalvarez.me">paulalvarez.me</a> (with future routing to <code>alvalog.net</code>).</li>
+        <li><strong>Typography:</strong> Set in <em>Newsreader</em> for editorial serif headings and clean, high-legibility system sans for long-form reading comfort.</li>
+        <li><strong>Color Palette:</strong> Inspired by warm newspaper stock and terracotta accents, paired with a rich slate dark mode.</li>
+      </ul>
+
+      <h2>Connect</h2>
+      <p>
+        I love connecting with fellow writers, tech enthusiasts, and curious thinkers. You can find me here:
+      </p>
+      <ul>
+        <li><strong>Mastodon:</strong> <a href="https://mastodon.social/@PaulAlvarez" target="_blank" rel="me noopener">@PaulAlvarez@mastodon.social</a></li>
+        <li><strong>Threads:</strong> <a href="https://www.threads.net/@techuisite" target="_blank" rel="noopener">@techuisite</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/techuisite" target="_blank" rel="noopener">github.com/techuisite</a></li>
+        <li><strong>RSS Feed:</strong> <a href="/rss.xml">Subscribe via RSS</a></li>
+      </ul>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .about-header {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.5rem;
+  }
+
+  .about-title {
+    font-size: 2.75rem;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .about-lead {
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+    margin-bottom: 0;
+  }
+
+  .about-content {
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+
+  .about-content h2 {
+    font-size: 1.6rem;
+    margin-top: 2.75rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 0.35rem;
+  }
+
+  .about-content ul {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-content li {
+    margin-bottom: 0.75rem;
+  }
+</style>

@@ -8,7 +8,7 @@ export async function GET(context: any) {
   return rss({
     title: 'Alvalog — By Paul Alvarez',
     description: 'A personal publication exploring technology, writing tools, and modern craft. Written by Paul Alvarez.',
-    site: context.site || 'https://www.paulalvarez.me',
+    site: context.site || 'https://alvalog.net',
     items: sorted.map((post) => ({
       title: post.data.title,
       pubDate: post.data.pubDate,

@@ -2,12 +2,12 @@
 title: "Samsung Galaxy Z Fold8 Review"
 description: "My first time using a foldable full-time and my transition from iOS to Android."
 pubDate: "2026-10-05T18:43:26.330Z"
-updatedDate: "2026-10-05T21:08:38.336Z"
+updatedDate: "2026-10-05T21:15:30.871Z"
 tags: []
 featured: false
 ---
 
-A few months back I was upset with the big tech companies and them bowing down to our disgusting administration currently in charge of my country. I am still bitter about all those tech CEOs in attendance at the inaguration and donating millions to what I believe is an authoritarian movement going against our democracy. 
+A few months back I was upset with the big tech companies and them bowing down to our disgusting administration currently in charge of my country. I am still bitter about all those tech CEOs in attendance at the inauguration and donating millions to what I believe is an authoritarian movement going against our democracy. 
 
 Regardless of my anger, I was also terrified in how much the government was going to be given access to our data given how much it felt that the tech companies were doing all they could to butter up the President and make sure he was happy to keep their companies and pockets happy.
 
@@ -25,4 +25,6 @@ Because GrapheneOS was not successful, and because Apple seemed the safer choice
 
 When Samsung unveiled the Fold8 last year I was indifferent to it. I have seen foldables before and because I was still on the _Apple-train_ I didn't even consider a Samsung phone an option. The thing that triggered my actual desire to get it was my changing of priorities of what I have been using my tools for, and my boredom with Apple and it's ecosystem. 
 
-I wrote about how I fell out of favor for the Apple Watch and decided to start wearing a traditional watch again with a smart ring to capture some health data. 
+I wrote about how I fell out of favor for the Apple Watch and decided to start wearing a traditional watch again with a smart ring to capture some health data. Once the rumors, than the announcement, made it pretty clear a foldable was on the way for Apple and the iPhone, I realized how much I was bored of iOS. Even with a new interface and form factor, I felt that even with new hardware by Apple, I was still going to be bored with iOS like I was now.
+
+So, I decided to just take the plunge. I traded in my iPhone 17 for a Galaxy Z Fold8 which I got through AT&T for free, and have been using it ever since. It has been over a month an a half now with the Z Fold8, and even with some bumpy roads I am having a lot of fun with this device and with Android in general. It is fun to just experience something new and different, but I also feel the whole Apple lock-in to not be as big as an issue that I thought it would be. 

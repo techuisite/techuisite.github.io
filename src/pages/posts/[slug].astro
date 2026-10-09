@@ -191,10 +191,20 @@ const readingTime = estimateReadingTime(post.body);
     margin-bottom: 1rem;
   }
 
-  .article-content :global(img) {
+  .article-content :global(img:not(.kg-bookmark-thumbnail img)) {
     margin: 2.5rem auto;
     border-radius: 8px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .article-content :global(.kg-bookmark-thumbnail img) {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
   }
 
   .article-footer {

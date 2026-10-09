@@ -18,7 +18,6 @@ You can read the whole review on Techuisite here:
       <div class="kg-bookmark-title">RingConn2 Smart Ring Review</div>
       <div class="kg-bookmark-description">My transition from smart watch to smart ring is feeling pretty permanent.</div>
       <div class="kg-bookmark-metadata">
-        <img class="kg-bookmark-icon" src="/content/images/icon/techuisite.jpeg" alt="Techuisite">
         <span class="kg-bookmark-author">Techuisite · Paul Alvarez</span>
       </div>
     </div>

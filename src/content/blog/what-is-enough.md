@@ -1,11 +1,10 @@
 ---
 title: "From Smart Watch to Smart Ring"
 pubDate: "2026-10-09T21:29:51.336Z"
+heroImage: "/content/images/2026/10/miltado-watch.jpg"
 tags: ["Watch", "Review", "Techuisite", "Link Post"]
 featured: false
 ---
-
-![miltado-watch.jpg](/content/images/2026/10/miltado-watch.jpg)
 
 I wrote my review about the RingConn Smart Ring after moving away from the Apple Watch. I have officially been wearing a traditional _analog_ watch for months now and don't miss the smart features at all. The Apple Watch is great for many things, but not things I find important. 
 

@@ -13,17 +13,17 @@ I plan to review the watch in the image above in a future everyday carry post co
 You can read the whole review on Techuisite here:
 
 <figure class="kg-card kg-bookmark-card">
-  <a class="kg-bookmark-container" href="https://medium.com/techuisite/ringconn2-smart-ring-review-97eb7159fafe?sk=8a8819ffe0f5f96683d10d88c9aa264b">
+  <a class="kg-bookmark-container" href="https://medium.com/techuisite/ringconn2-smart-ring-review-97eb7159fafe?sk=8a8819ffe0f5f96683d10d88c9aa264b" target="_blank" rel="noopener noreferrer">
     <div class="kg-bookmark-content">
-      <div class="kg-bookmark-title">RingConn Gen 2 Smart Ring Review</div>
-      <div class="kg-bookmark-description">My transition from a smartwatch to a smart ring is feeling pretty permanent.</div>
+      <div class="kg-bookmark-title">RingConn2 Smart Ring Review</div>
+      <div class="kg-bookmark-description">My transition from smart watch to smart ring is feeling pretty permanent.</div>
       <div class="kg-bookmark-metadata">
-        <img class="kg-bookmark-icon" src="https://medium.com/favicon.ico" alt="">
+        <img class="kg-bookmark-icon" src="/content/images/icon/favicon.svg" alt="">
         <span class="kg-bookmark-author">Techuisite · Paul Alvarez</span>
       </div>
     </div>
     <div class="kg-bookmark-thumbnail">
-      <img src="/content/images/2026/10/miltado-watch.jpg" alt="" onerror="this.style.display = 'none'">
+      <img src="/content/images/2026/10/ringconn2-review-hero.jpeg" alt="RingConn2 Smart Ring Review" onerror="this.style.display = 'none'">
     </div>
   </a>
 </figure>

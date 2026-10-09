@@ -2,12 +2,29 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostCard from '../components/PostCard.astro';
 import { getCollection } from 'astro:content';
+import { getOptimizedImage } from '../utils/imageOptimizer';
 
 const allPosts = await getCollection('blog');
 const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const leadPost = sortedPosts[0];
 const streamPosts = sortedPosts.slice(1, 15);
+
+const leadHeroOptimized = leadPost?.data.heroImage
+  ? await getOptimizedImage(leadPost.data.heroImage, 'lead')
+  : null;
+
+const streamPostsWithImages = await Promise.all(
+  streamPosts.map(async (post) => {
+    const thumbUrl = post.data.heroImage
+      ? await getOptimizedImage(post.data.heroImage, 'thumb')
+      : null;
+    return {
+      ...post,
+      thumbnailUrl: thumbUrl,
+    };
+  })
+);
 
 function estimateReadingTime(body = '') {
   const words = body.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
@@ -32,7 +49,7 @@ const leadReadingTime = leadPost ? estimateReadingTime(leadPost.body) : '';
           {leadPost.data.heroImage && (
             <a href={`/posts/${leadPost.id}`} class="lead-image-link">
               <img
-                src={leadPost.data.heroImage}
+                src={leadHeroOptimized || leadPost.data.heroImage}
                 alt={leadPost.data.title}
                 class="lead-image"
                 fetchpriority="high"
@@ -81,13 +98,13 @@ const leadReadingTime = leadPost ? estimateReadingTime(leadPost.body) : '';
       </div>
 
       <div class="stream-list">
-        {streamPosts.map((post) => (
+        {streamPostsWithImages.map((post) => (
           <PostCard
             title={post.data.title}
             description={post.data.description}
             pubDate={post.data.pubDate}
             slug={post.id}
-            heroImage={post.data.heroImage}
+            heroImage={post.thumbnailUrl || post.data.heroImage}
             tags={post.data.tags}
             readingTime={estimateReadingTime(post.body)}
           />
@@ -136,6 +153,8 @@ const leadReadingTime = leadPost ? estimateReadingTime(leadPost.body) : '';
     object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
   .lead-story:hover .lead-image {

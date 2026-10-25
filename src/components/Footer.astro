@@ -2,6 +2,10 @@
 const currentYear = new Date().getFullYear();
 ---
 <footer class="site-footer container">
+  <aside class="currently" aria-label="Currently">
+    <span class="currently-label">Currently</span>
+    <p>Refining this little corner of the web.</p>
+  </aside>
   <nav aria-label="Elsewhere">
     <a href="https://mastodon.social/@PaulAlvarez" rel="me">Mastodon</a>
     <a href="https://www.threads.net/@techuisite">Threads</a>
@@ -14,4 +18,10 @@ const currentYear = new Date().getFullYear();
   .site-footer { margin-top: 4rem; padding-bottom: 2rem; font-family: var(--font-sans); font-size: 0.8rem; color: var(--text-secondary); }
   nav { border-top: 1px solid var(--border-color); padding-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 1.25rem; margin-bottom: 1rem; }
   a { color: inherit; }
+</style>
+
+<style>
+  .currently { border-top: 1px solid var(--border-color); padding: 1.5rem 0; display: flex; flex-wrap: wrap; column-gap: 1.25rem; row-gap: 0.5rem; align-items: baseline; }
+  .currently-label { color: var(--accent); font-weight: 700; font-size: 0.75rem; }
+  .currently p { margin: 0; font-family: var(--font-serif); font-style: italic; font-size: 1rem; }
 </style>

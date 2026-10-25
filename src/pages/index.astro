@@ -12,7 +12,7 @@ const dateFormat = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numer
   <div class="container blog-feed">
     <h1 class="visually-hidden">Recent writing</h1>
     {entries.map(({ post, Content }) => (
-      <article class="blog-entry" aria-labelledby={`title-${post.id}`}>
+      <article class:list={["blog-entry", { "short-entry": (post.body || "").replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length < 250 }]} aria-labelledby={`title-${post.id}`}>
         <header class="entry-header">
           <h2 id={`title-${post.id}`} class="entry-title"><a href={`/posts/${post.id}`}>{post.data.title}</a></h2>
           <a class="entry-date" href={`/posts/${post.id}`} aria-label={`Permalink to ${post.data.title}`}>
@@ -41,4 +41,9 @@ const dateFormat = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numer
   .entry-image { display: block; width: 100%; margin: 0 0 1.75rem; }
   .feed-navigation { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-family: var(--font-sans); font-size: 0.85rem; }
   .feed-navigation span { color: var(--text-secondary); }
+</style>
+
+<style>
+  .short-entry .entry-title { font-size: 1.5rem; }
+  .short-entry { border-left: 2px solid var(--accent); padding-left: 1.25rem; }
 </style>

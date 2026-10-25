@@ -8,6 +8,7 @@ const blog = defineCollection({
     description: z.string().optional(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
+    link: z.string().url().refine((value) => /^https?:\/\//.test(value), 'Use an HTTP or HTTPS link').optional(),
     heroImage: z.string().optional(),
     tags: z.array(z.string()).default([]),
     featured: z.boolean().default(false),

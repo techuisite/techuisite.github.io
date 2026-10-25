@@ -13,7 +13,6 @@ const { currentPath = '' } = Astro.props;
     <div class="brand">
       <a href="/" class="brand-title" aria-label="Alvalog"><span>Alva</span><span class="wordmark-log">log</span><span class="wordmark-dot" aria-hidden="true">.</span></a>
       <span class="brand-byline">By Paul Alvarez</span>
-      <p class="brand-tagline">Technology, and how I live with it.</p>
     </div>
 
     <nav class="site-nav" aria-label="Main Navigation">
@@ -48,6 +47,5 @@ const { currentPath = '' } = Astro.props;
 <style>
   .wordmark-log { font-weight: 400; }
   .wordmark-dot { color: var(--accent); }
-  .brand-tagline { flex-basis: 100%; margin: 0; font-family: var(--font-serif); font-style: italic; font-size: 1.05rem; color: var(--text-secondary); }
   .site-nav { border-top: 3px solid var(--accent); border-bottom: 0; padding-top: 0.85rem; padding-bottom: 0; }
 </style>

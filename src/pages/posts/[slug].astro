@@ -52,7 +52,7 @@ const readingTime = estimateReadingTime(post.body);
         <span>By Paul Alvarez</span>
       </div>
 
-      <h1 class="article-title">{post.data.title}</h1>
+      <h1 class="article-title">{post.data.link ? <a href={post.data.link}>{post.data.title}<span aria-label=" (external link)"> ↗</span></a> : post.data.title}</h1>
 
     </header>
 
@@ -133,7 +133,6 @@ const readingTime = estimateReadingTime(post.body);
     margin: 2rem 0 3rem;
     border-radius: 2px;
     overflow: hidden;
-    background-color: var(--bg-muted);
 
   }
 
@@ -141,8 +140,8 @@ const readingTime = estimateReadingTime(post.body);
     width: 100%;
     height: auto;
     display: block;
-    max-height: 540px;
-    object-fit: cover;
+    max-height: min(320px, 40svh);
+    object-fit: contain;
   }
 
   .article-content {

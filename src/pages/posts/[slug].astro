@@ -52,15 +52,8 @@ const readingTime = estimateReadingTime(post.body);
         <span>By Paul Alvarez</span>
       </div>
 
-      <h1 class="article-title">{post.data.title}</h1>
+      <h1 class="article-title">{post.data.link ? <a href={post.data.link}>{post.data.title}<span aria-label=" (external link)"> ↗</span></a> : post.data.title}</h1>
 
-      {post.data.tags && post.data.tags.length > 0 && (
-        <div class="article-tags">
-          {post.data.tags.map((tag: string) => (
-            <span class="tag-badge">{tag}</span>
-          ))}
-        </div>
-      )}
     </header>
 
     {post.data.heroImage && (
@@ -75,19 +68,11 @@ const readingTime = estimateReadingTime(post.body);
       </div>
     )}
 
-    <div class="article-content">
+    <div class="article-content prose">
       <Content />
     </div>
 
     <footer class="article-footer">
-      <div class="author-box">
-        <div class="author-avatar">✒️</div>
-        <div class="author-info">
-          <p class="author-name">Paul Alvarez</p>
-          <p class="author-bio">Writer and creator of Alvalog. Exploring the tools, technologies, and tactile gear that shape how we think and work.</p>
-        </div>
-      </div>
-
       <nav class="post-navigation" aria-label="Adjacent Articles">
         {prevPost ? (
           <a href={`/posts/${prevPost.id}`} class="nav-prev">
@@ -138,25 +123,17 @@ const readingTime = estimateReadingTime(post.body);
   }
 
   .article-title {
-    font-size: 2.75rem;
+    font-size: clamp(1.7rem, 4vw, 2.1rem);
     line-height: 1.18;
     margin: 0 0 1.25rem 0;
     letter-spacing: -0.02em;
   }
 
-  .article-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1rem;
-  }
-
   .article-hero-wrap {
     margin: 2rem 0 3rem;
-    border-radius: 12px;
+    border-radius: 2px;
     overflow: hidden;
-    background-color: var(--bg-muted);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+
   }
 
   .article-hero-image {
@@ -193,8 +170,8 @@ const readingTime = estimateReadingTime(post.body);
 
   .article-content :global(img:not(.kg-bookmark-thumbnail img)) {
     margin: 2.5rem auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    border-radius: 2px;
+
   }
 
   .article-content :global(.kg-bookmark-thumbnail img) {
@@ -210,40 +187,7 @@ const readingTime = estimateReadingTime(post.body);
   .article-footer {
     margin-top: 4.5rem;
     padding-top: 3rem;
-    border-top: 2px solid var(--border-color);
-  }
-
-  .author-box {
-    display: flex;
-    gap: 1.25rem;
-    align-items: center;
-    background-color: var(--bg-surface);
-    border: 1px solid var(--border-color);
-    padding: 1.5rem;
-    border-radius: 10px;
-    margin-bottom: 3rem;
-  }
-
-  .author-avatar {
-    font-size: 2.25rem;
-    line-height: 1;
-    background-color: var(--bg-muted);
-    padding: 0.75rem;
-    border-radius: 50%;
-  }
-
-  .author-name {
-    font-family: var(--font-serif);
-    font-weight: 700;
-    font-size: 1.15rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .author-bio {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 0;
+    border-top: 1px solid var(--border-color);
   }
 
   .post-navigation {
@@ -258,7 +202,7 @@ const readingTime = estimateReadingTime(post.body);
     flex-direction: column;
     padding: 1.25rem;
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 2px;
     text-decoration: none;
     transition: all 0.2s ease;
   }

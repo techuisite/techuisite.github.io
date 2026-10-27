@@ -14,14 +14,14 @@ interface Props {
 const {
   title = 'Alvalog — Notes on Technology, Tools & Craft',
   description = 'A personal publication exploring technology, writing tools, and modern craft. Written by Paul Alvarez.',
-  image = '/content/images/2026/06/IMG_0243.jpeg',
+  image,
   currentPath = '',
   article = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const fullTitle = title.includes('Alvalog') ? title : `${title} — Alvalog`;
-const ogImage = image.startsWith('http') ? image : new URL(image, Astro.site).toString();
+const ogImage = image ? new URL(image, canonicalURL).toString() : undefined;
 ---
 
 <!DOCTYPE html>
@@ -38,15 +38,15 @@ const ogImage = image.startsWith('http') ? image : new URL(image, Astro.site).to
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
     <meta property="og:site_name" content="Alvalog" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:card" content={ogImage ? "summary_large_image" : "summary"} />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={fullTitle} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={ogImage} />
+    {ogImage && <meta property="twitter:image" content={ogImage} />}
 
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="Alvalog" href="/rss.xml" />

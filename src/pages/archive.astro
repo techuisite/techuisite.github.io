@@ -45,9 +45,6 @@ function formatShortDate(date: Date) {
                 <a href={`/posts/${post.id}`} class="archive-link">
                   {post.data.title}
                 </a>
-                {post.data.tags.length > 0 && (
-                  <span class="archive-tag">{post.data.tags[0]}</span>
-                )}
               </li>
             ))}
           </ul>
@@ -124,23 +121,11 @@ function formatShortDate(date: Date) {
     color: var(--accent);
   }
 
-  .archive-tag {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    background-color: var(--bg-muted);
-    padding: 0.15rem 0.5rem;
-    border-radius: 4px;
-    white-space: nowrap;
-  }
-
   @media (max-width: 600px) {
     .archive-item {
       flex-wrap: wrap;
       gap: 0.5rem;
     }
 
-    .archive-tag {
-      display: none;
-    }
   }
 </style>

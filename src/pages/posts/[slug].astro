@@ -20,12 +20,6 @@ export async function getStaticPaths() {
 const { post, prevPost, nextPost } = Astro.props;
 const { Content } = await render(post);
 
-function estimateReadingTime(body = '') {
-  const words = body.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
-  const minutes = Math.max(1, Math.round(words / 200));
-  return `${minutes} min read`;
-}
-
 const formattedDate = new Intl.DateTimeFormat('en-US', {
   weekday: 'long',
   year: 'numeric',
@@ -33,13 +27,13 @@ const formattedDate = new Intl.DateTimeFormat('en-US', {
   day: 'numeric',
 }).format(post.data.pubDate);
 
-const readingTime = estimateReadingTime(post.body);
+const readingTime = `${Math.max(1, Math.round(post.data.wordCount / 200))} min read`;
 ---
 
 <BaseLayout
   title={post.data.title}
   description={post.data.description}
-  image={post.data.heroImage}
+  image={post.data.image}
   article={true}
 >
   <article class="article-container">
@@ -55,18 +49,6 @@ const readingTime = estimateReadingTime(post.body);
       <h1 class="article-title">{post.data.link ? <a href={post.data.link}>{post.data.title}<span aria-label=" (external link)"> ↗</span></a> : post.data.title}</h1>
 
     </header>
-
-    {post.data.heroImage && (
-      <div class="article-hero-wrap">
-        <img
-          src={post.data.heroImage}
-          alt={post.data.title}
-          class="article-hero-image"
-          fetchpriority="high"
-          decoding="async"
-        />
-      </div>
-    )}
 
     <div class="article-content prose">
       <Content />
@@ -127,21 +109,6 @@ const readingTime = estimateReadingTime(post.body);
     line-height: 1.18;
     margin: 0 0 1.25rem 0;
     letter-spacing: -0.02em;
-  }
-
-  .article-hero-wrap {
-    margin: 2rem 0 3rem;
-    border-radius: 2px;
-    overflow: hidden;
-
-  }
-
-  .article-hero-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    max-height: 540px;
-    object-fit: cover;
   }
 
   .article-content {

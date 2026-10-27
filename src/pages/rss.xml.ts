@@ -15,10 +15,7 @@ export async function GET(context: any) {
     const { Content } = await render(post);
     const body = await container.renderToString(Content);
     // Keep article media and formatting while removing site-only scripts/styles.
-    const hero = post.data.heroImage
-      ? `<p><img src="${new URL(post.data.heroImage, site).href.replace(/&/g, '&amp;').replace(/"/g, '&quot;')}" alt="" /></p>`
-      : '';
-    const content = sanitizeHtml(hero + body, {
+    const content = sanitizeHtml(body, {
       allowedTags: [...sanitizeHtml.defaults.allowedTags, 'img', 'figure', 'figcaption', 'video', 'audio', 'source'],
       allowedAttributes: {
         ...sanitizeHtml.defaults.allowedAttributes,

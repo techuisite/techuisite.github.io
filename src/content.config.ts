@@ -1,18 +1,16 @@
 import { defineCollection, z } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { blogLoader } from './utils/blog-loader';
 
+// These values are derived by the loader. Authors only write a heading and body.
 const blog = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
+  loader: blogLoader(),
   schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
+    title: z.string().min(1),
     pubDate: z.coerce.date(),
-    updatedDate: z.coerce.date().optional(),
-    link: z.string().url().refine((value) => /^https?:\/\//.test(value), 'Use an HTTP or HTTPS link').optional(),
-    heroImage: z.string().optional(),
-    tags: z.array(z.string()).default([]),
-    featured: z.boolean().default(false),
+    link: z.string().url().optional(),
+    image: z.string().optional(),
+    description: z.string(),
+    wordCount: z.number(),
   }),
 });
-
 export const collections = { blog };

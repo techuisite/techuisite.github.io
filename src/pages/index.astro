@@ -12,14 +12,13 @@ const dateFormat = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numer
   <div class="container blog-feed">
     <h1 class="visually-hidden">Recent writing</h1>
     {entries.map(({ post, Content }) => (
-      <article class:list={["blog-entry", { "brief-entry": !!post.data.link || (post.body || "").replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length < 250 }]} aria-labelledby={`title-${post.id}`}>
+      <article class:list={["blog-entry", { "brief-entry": !!post.data.link || post.data.wordCount < 250 }]} aria-labelledby={`title-${post.id}`}>
         <header class="entry-header">
           <h2 id={`title-${post.id}`} class="entry-title"><a href={post.data.link || `/posts/${post.id}`}>{post.data.title}{post.data.link && <span class="external-arrow" aria-label=" (external link)"> ↗</span>}</a></h2>
           <a class="entry-date" href={`/posts/${post.id}`} aria-label={`Permalink to ${post.data.title}`}>
             <time datetime={post.data.pubDate.toISOString()}>{dateFormat.format(post.data.pubDate)}</time>
           </a>
         </header>
-        {post.data.heroImage && <img class="entry-image" src={post.data.heroImage} alt={post.data.title} loading="lazy" decoding="async" />}
         <div class="prose"><Content /></div>
       </article>
     ))}
@@ -38,7 +37,6 @@ const dateFormat = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numer
   .entry-title a:hover { color: var(--accent); }
   .entry-date { font-family: var(--font-sans); font-size: 0.8rem; color: var(--text-secondary); text-decoration: none; }
   .entry-date:hover { text-decoration: underline; }
-  .entry-image { display: block; width: 100%; margin: 0 0 1.75rem; }
   .feed-navigation { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-family: var(--font-sans); font-size: 0.85rem; }
   .feed-navigation span { color: var(--text-secondary); }
 </style>

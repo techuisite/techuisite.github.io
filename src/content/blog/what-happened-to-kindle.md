@@ -3,7 +3,6 @@
 
 ![](/content/images/what-happened-to-kindle/A2EE8767-CE6B-44A5-9658-617AADA8437B.jpeg)
 
----- 
 I don’t like Jeff Bezos, I have said this before in other posts but I want to repeat it here at the beginning. I think what he did with the Washington Post and his role, along with other Tech CEOS, in catering to our current White House Administration is problematic towards America and our Democracy in the US.
 
 In saying that, many have had conflicting feelings about the actual companies that these awful humans are apart of and how we approach spending our money or time when the people we despise benefit. I have admittedly gone back and forth with my Amazon Prime subscription, I don’t have it setup to auto renewal but I sometimes turn it on when my wife and I need something quick that we can’t get elsewhere. 
@@ -16,8 +15,7 @@ Amazon just released new Kindles this year and all the YouTubers and bloggers th
 
 ### My Current Ereader
 
-![](/content/images/what-happened-to-kindle/E0C187EF-817F-41E4-BA71-6A10A5DBB05F.jpeg)
-_Kindle Voyage (2014)_
+<figure class="kg-card kg-image-card kg-card-hascaption"><img src="/content/images/what-happened-to-kindle/E0C187EF-817F-41E4-BA71-6A10A5DBB05F.jpeg" class="kg-image" alt="Kindle Voyage (2014)" loading="lazy"><figcaption>Kindle Voyage (2014)</figcaption></figure>
 
 I currently own a used Kindle Voyage that I jailbroke and installed KOReader on. It has become my most used device for reading. I do sometimes switch back and forth using the Voyage and my XTEINK X4 Pro, using Crosspoints sync which works surprisingly well. The Voyage is one of the best ereaders ever even though it does have some limitations and frustrations that have kept my eye open for alternatives. 
 
@@ -29,8 +27,7 @@ To quickly touch on those frustrations:
 Both of these things are not solved by the 2026 Kindle that I picked up from my local Target. The reason I bought the Kindle was to see how improved they have gotten over the last few years. So my goal wasn’t to see if it improved any of my frustrations of the Voyage but to just get a glimpse at what Amazon has to offer.
 
 ### 2026 Kindle Thoughts
-![](/content/images/what-happened-to-kindle/6CFE45EA-E8F1-40DA-BB39-68BA6B144FEF.jpeg)
-_2026 Kindle_
+<figure class="kg-card kg-image-card kg-card-hascaption"><img src="/content/images/what-happened-to-kindle/6CFE45EA-E8F1-40DA-BB39-68BA6B144FEF.jpeg" class="kg-image" alt="2026 Kindle" loading="lazy"><figcaption>2026 Kindle</figcaption></figure>
 
 The casing of the Kindles are nice, I am sure the aluminum versions are even better, but I do like that all of them have flush displays to the casing and really think the boxy form factor is better. I also appreciate that the power button is up on top right side of the device instead of the bottom like older Kindles — the Voyage has the power button on the top right of the back of the device which is the best placement of all.
 
@@ -40,20 +37,17 @@ The contrast of black text on the white background not good. The text is more of
 
 When I compare the new Kindle to my Voyage you can see a clear difference in what I am talking about. The Voyage contrast is so much better and text not only looks way more crisp but the black text is also so much more prominent. I tried bolding the text on the Kindle but even then the difference was not much better at all.
 
-![](/content/images/what-happened-to-kindle/3ED9663E-C243-403C-A405-715F53627BAA.jpeg)
-_Voyage on right , 2026 Kindle on the left_
+<figure class="kg-card kg-image-card kg-card-hascaption"><img src="/content/images/what-happened-to-kindle/3ED9663E-C243-403C-A405-715F53627BAA.jpeg" class="kg-image" alt="Voyage on right , 2026 Kindle on the left" loading="lazy"><figcaption>Voyage on right , 2026 Kindle on the left</figcaption></figure>
 
 My first instinct when I saw this was to question that maybe it is KOReader making things look better. I know KOReader uses its own engine to render text and the e-ink display so I closed KOReader and opened a book in the older but still usable “KindleOS” installed on the Voyage and the difference was still there.
 
 One thing that I do have to caveat is that the Voyage was the best Kindle you could buy at the time of its release. It was a premium option over the Paperwhites that were sold at the time. The problem is, even if you could argue that I am comparing a premium Kindle, the Voyage, to a base model (albeit the Voyage is 12 years old now), the issue is that the Voyage has the original E Ink Carta display. 
 
-![](/content/images/what-happened-to-kindle/0CB5EA5C-022A-4792-A557-32BF31999826.jpeg)
-_Voyage on right , 2026 Kindle on the left_
+<figure class="kg-card kg-image-card kg-card-hascaption"><img src="/content/images/what-happened-to-kindle/0CB5EA5C-022A-4792-A557-32BF31999826.jpeg" class="kg-image" alt="Voyage on right , 2026 Kindle on the left" loading="lazy"><figcaption>Voyage on right , 2026 Kindle on the left</figcaption></figure>
 
 The newer Kindles have either a E ink Carta 1200 or 1300 (it has not been confirmed which panel it has but the previous model , the 2024 Kindle, had 1200 and some reviewers have said that they think the 2026 model has a 1300 panel), which means that you would hope to see better improvement in contrast.
 
-![](/content/images/what-happened-to-kindle/C30796F0-7D5F-40D0-8A19-85E12F4BBC83.jpeg)![](/content/images/what-happened-to-kindle/1595C52F-8B4B-43D1-9F50-99A2AB832EEE.jpeg)
-_2026 Kindle on the top, Voyage on bottom_
+<figure class="kg-card kg-image-card kg-card-hascaption"><img src="/content/images/what-happened-to-kindle/C30796F0-7D5F-40D0-8A19-85E12F4BBC83.jpeg" class="kg-image" alt="2026 Kindle on the top, Voyage on bottom" loading="lazy"><img src="/content/images/what-happened-to-kindle/1595C52F-8B4B-43D1-9F50-99A2AB832EEE.jpeg" class="kg-image" alt="2026 Kindle on the top, Voyage on bottom" loading="lazy"><figcaption>2026 Kindle on the top, Voyage on bottom</figcaption></figure>
 
 One side note, most of the improvements with newer e-ink technology will focus on refresh and ghosting, but contrast has also seen some improvements over the years, some say around 15% to 20% improvements over each generations, and why I am so surprised that the Kindles look so bad. 
 

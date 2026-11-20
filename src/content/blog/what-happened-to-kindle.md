@@ -1,9 +1,8 @@
 # What Happened to Kindle?
-
 ## After being away for awhile, I am surprised how bad it’s got.
 
 ![](/content/images/what-happened-to-kindle/A2EE8767-CE6B-44A5-9658-617AADA8437B.jpeg)
-_2026 Kindle_
+
 ---- 
 I don’t like Jeff Bezos, I have said this before in other posts but I want to repeat it here at the beginning. I think what he did with the Washington Post and his role, along with other Tech CEOS, in catering to our current White House Administration is problematic towards America and our Democracy in the US.
 
@@ -42,14 +41,14 @@ The contrast of black text on the white background not good. The text is more of
 When I compare the new Kindle to my Voyage you can see a clear difference in what I am talking about. The Voyage contrast is so much better and text not only looks way more crisp but the black text is also so much more prominent. I tried bolding the text on the Kindle but even then the difference was not much better at all.
 
 ![](/content/images/what-happened-to-kindle/3ED9663E-C243-403C-A405-715F53627BAA.jpeg)
-_ Voyage on right , 2026 Kindle on the left_
+_Voyage on right , 2026 Kindle on the left_
 
 My first instinct when I saw this was to question that maybe it is KOReader making things look better. I know KOReader uses its own engine to render text and the e-ink display so I closed KOReader and opened a book in the older but still usable “KindleOS” installed on the Voyage and the difference was still there.
 
 One thing that I do have to caveat is that the Voyage was the best Kindle you could buy at the time of its release. It was a premium option over the Paperwhites that were sold at the time. The problem is, even if you could argue that I am comparing a premium Kindle, the Voyage, to a base model (albeit the Voyage is 12 years old now), the issue is that the Voyage has the original E Ink Carta display. 
 
 ![](/content/images/what-happened-to-kindle/0CB5EA5C-022A-4792-A557-32BF31999826.jpeg)
-_ Voyage on right , 2026 Kindle on the left_
+_Voyage on right , 2026 Kindle on the left_
 
 The newer Kindles have either a E ink Carta 1200 or 1300 (it has not been confirmed which panel it has but the previous model , the 2024 Kindle, had 1200 and some reviewers have said that they think the 2026 model has a 1300 panel), which means that you would hope to see better improvement in contrast.
 

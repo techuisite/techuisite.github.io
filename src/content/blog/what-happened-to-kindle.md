@@ -10,7 +10,7 @@ In saying that, many have had conflicting feelings about the actual companies th
 
 When it comes to my ebooks, I jumped ship from Amazon/Kindle exactly one year ago (early-October) and haven’t looked back. It started with them limiting users ability to download the ebooks they purchased. But I am also trying my best to stay away from Amazon all together. Everyone has their own values and what they are okay with, I am trying my best to stick with what is right for me. 
 
-Over the past two years now I have been really into e-ink, see my posts about Remarkable and Supernote, and I have always been interested in ereaders over reading on a LCD or OLED screen. I love my iPad Pro, and have tried reading books on it on occasion, but I ultimately prefer e-ink when I read at night before bed — which is the only time I can really read now; parenting, am I right?
+Over the past two years now I have been really into e-ink, see my posts about [Remarkable](https://alvalog.net/posts/remarkable-paper-pro-move-review/) and [Supernote](https://alvalog.net/posts/my-supernote-experience/), and I have always been interested in ereaders over reading on a LCD or OLED screen. I love my iPad Pro, and have tried reading books on it on occasion, but I ultimately prefer e-ink when I read at night before bed — which is the only time I can really read now; parenting, am I right?
 
 Amazon just released new Kindles this year and all the YouTubers and bloggers that write about e-ink have been talking about them so I thought I would at least pick one up and see for myself. I had no intention in keeping it, or god forbid buy a Kindle DRM’d ebook on it, but I did want to at least see how much the Kindles have improved ever since I stopped buying them. 
 
